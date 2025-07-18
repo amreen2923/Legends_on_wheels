@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    
+}
+.header {
+    text-align: left;
+    background:linear-gradient(135deg, #243B55, #141E30);
+    color: white;
+    padding: 10px;
+}
+.header a{
+    color: #f4f4f4;
+    /* background-color: #222; */
+}
+
+.car-directory {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+h2{
+    text-align: center;
+}
+.car-card {
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.car-card img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+  .main-content {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow-wrap: break-word;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            word-wrap: break-word;
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .carousel img {
+            width: 100%;
+            max-width: 800px;
+            max-height: 500px;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        p {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: justify;
+            word-wrap: break-word;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
