@@ -30,7 +30,7 @@ function isActiveForm($formName, $activeForm)
 <body>
    
  <div class="home">
-    <a href="index.php"><img src="home/home-icon.png" alt=""></a>
+    <a href="index.html"><img src="home/home-icon.png" alt=""></a>
 </div>
     <div class="container">
           <div class="form-box <?php echo isActiveForm('login', $activeForm);?>" id="login-form">

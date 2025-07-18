@@ -83,7 +83,7 @@ $conn->close();
         <div class="head">
                <button class="menu-toggle">☰ Menu</button>
             <ul class="menu nav-links">
-                <a href="index.php"><li>Home</li></a>
+                <a href="index.html"><li>Home</li></a>
                 <a href="car-directory.html"><li>Directory</li></a>
                 <a href="gallery.php"><li>Gallery</li></a>
                 <a href="blog.php"><li>Blog</li></a>
