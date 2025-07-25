@@ -2,6 +2,9 @@
     padding: 0;
     text-decoration: none;
 }
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 h2{
     text-align: center;
     margin-top: 4vh;
@@ -111,7 +114,7 @@ h2{
     text-align: center;
     font-size: 10vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #2C3E50;
+    /* color: #2C3E50; */
 }
 h3{
     text-align: center;

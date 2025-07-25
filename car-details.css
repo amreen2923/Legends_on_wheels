@@ -6,6 +6,9 @@
     list-style: none;
     
 }
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .header {
     text-align: left;
     background:linear-gradient(135deg, #243B55, #141E30);

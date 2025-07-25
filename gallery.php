@@ -87,7 +87,17 @@ $conn->close();
                 <a href="car-directory.php"><li>Directory</li></a>
                 <a href="gallery.php"><li>Gallery</li></a>
                 <a href="blog.php"><li>Blog</li></a>
-                <a href="login.php"><li>Login</li></a>
+            <?php if (isset($_SESSION['email'])): ?>
+            <?php if ($_SESSION['role'] === 'admin'): ?>
+            <li><a href="admin_page.php">Admin Dashboard</a></li>
+            <?php else: ?>
+            <li><a href="user_page.php">User Dashboard</a></li>
+           <?php endif; ?>
+           <li><a href="logout.php">Logout</a></li>
+           <?php else: ?>
+           <li><a href="login.php">Login</a></li>
+            <?php endif; ?>
+
             </ul>
         </div>
     </div>

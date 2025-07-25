@@ -18,11 +18,16 @@
                 <li><a href="car-directory.php">Directory</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="blog.php">Blog</a></li>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                <li><a href="user_page.php">Dashboard</a></li>
-                <?php else: ?>
-                 <li><a href="login.php">Login</a></li>
-                <?php endif; ?>
+            <?php if (isset($_SESSION['email'])): ?>
+            <?php if ($_SESSION['role'] === 'admin'): ?>
+            <li><a href="admin_page.php">Admin Dashboard</a></li>
+            <?php else: ?>
+            <li><a href="user_page.php">User Dashboard</a></li>
+           <?php endif; ?>
+           <li><a href="logout.php">Logout</a></li>
+           <?php else: ?>
+           <li><a href="login.php">Login</a></li>
+            <?php endif; ?>
             </ul>
         </div>
     </div>

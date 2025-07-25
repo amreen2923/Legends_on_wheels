@@ -24,7 +24,6 @@ $postResult = $conn->query("SELECT * FROM blog_posts ORDER BY created_at DESC");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="admin_page.css">
-  
 </head>
 <body>
     <header>

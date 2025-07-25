@@ -139,8 +139,6 @@ let cars = {
             "japnese_cars/mazda-4.png"
         ]
     }
-
-
 };
 
 function getQueryParam(param) {

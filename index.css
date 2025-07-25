@@ -5,6 +5,9 @@
     text-decoration: none;
     list-style: none;
 }
+body{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .header {
     height: 12vh;
     width: auto;
