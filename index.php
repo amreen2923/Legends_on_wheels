@@ -15,7 +15,7 @@
             <button class="menu-toggle">☰ Menu</button>
             <ul class="menu nav-links">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="car-directory.html">Directory</a></li>
+                <li><a href="car-directory.php">Directory</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="blog.php">Blog</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
@@ -54,7 +54,7 @@
             <img src="home/bmw.png" alt="">
         </div>
     </div>
-   <a href="car-directory.html"> <button class="car-button">See More</button></a>
+   <a href="car-directory.php"> <button class="car-button">See More</button></a>
 </div>
 
 
@@ -103,7 +103,7 @@
  </div>
 
  <div class="gallery-button">
-    <button><a href="">Explore the Gallery</a></button>
+    <button><a href="gallery.php">Explore the Gallery</a></button>
  </div>
 
 

@@ -25,7 +25,7 @@ if (isset($_GET['delete_id']) && isset($_SESSION['role']) && $_SESSION['role'] =
           <button class="menu-toggle">☰ Menu</button>
         <ul class="menu nav-links">
             <a href="index.php"><li>Home</li></a>
-                <a href="car-directory.html"><li>Directory</li></a>
+                <a href="car-directory.php"><li>Directory</li></a>
                 <a href="gallery.php"><li>Gallery</li></a>
                 <a href="blog.php"><li>Blog</li></a>
          <?php if (isset($_SESSION['email'])): ?>
@@ -50,7 +50,7 @@ if (isset($_GET['delete_id']) && isset($_SESSION['role']) && $_SESSION['role'] =
     $result = $conn->query("SELECT * FROM blog_posts ORDER BY created_at DESC");
     if ($result && $result->num_rows > 0):
         while ($row = $result->fetch_assoc()):
-            // Use uploaded image or fallback placeholder
+
             $image = !empty($row['image_url']) ? $row['image_url'] : 'images/no-image.png';
     ?>
 
