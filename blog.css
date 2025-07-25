@@ -95,12 +95,18 @@ h3{
     margin-right: 3%;
 }
 
-.card img {
+/* .card img {
     width: 300px;
     max-height: 300px;
     object-fit: cover;
     margin-top: 2%;
     margin-left: 2%;
+} */
+.card img {
+    width: 40%;
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
 }
 
 .card-body {

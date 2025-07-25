@@ -1,48 +1,57 @@
 
-const modal = document.getElementById("shareModal");
-const openBtn = document.getElementById("openModalBtn");
-const closeBtn = document.querySelector(".close-btn");
+let modal = document.getElementById("shareModal");
+let openBtn = document.getElementById("openModalBtn");
+let closeBtn = document.querySelector(".close-btn");
 
-openBtn.onclick = () => modal.style.display = "flex";
-closeBtn.onclick = () => modal.style.display = "none";
-window.onclick = (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
-};
+if (modal && openBtn && closeBtn) {
+  openBtn.onclick = () => (modal.style.display = "flex");
+  closeBtn.onclick = () => (modal.style.display = "none");
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
 
- let angle = 0;
-    function rotate(direction) {
-      if (direction === 'left') {
-        angle -= 45;
-      } else {
-        angle += 45;
-      }
-      document.getElementById('imageContainer').style.transform = `perspective(1000px) rotateY(${angle}deg)`;
-    }
-  
-    let startX = 0;
-    let endX = 0;
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+}
 
-    document.getElementById('imageContainer').addEventListener('touchstart', (e) => {
+let angle = 0;
+let imageContainer = document.getElementById("imageContainer");
+function rotate(direction) {
+  if (!imageContainer) return;
+  angle += direction === "left" ? -45 : 45;
+  imageContainer.style.transform = `perspective(1000px) rotateY(${angle}deg)`;
+}
+
+let startX = 0;
+if (imageContainer) {
+  imageContainer.addEventListener(
+    "touchstart",
+    (e) => {
       startX = e.touches[0].clientX;
-    });
+    },
+    { passive: true }
+  );
 
-    document.getElementById('imageContainer').addEventListener('touchend', (e) => {
-      endX = e.changedTouches[0].clientX;
-      if (startX > endX + 30) {
-        rotate('right');
-      } else if (startX < endX - 30) {
-        rotate('left');
-      }
-    });
+  imageContainer.addEventListener(
+    "touchend",
+    (e) => {
+      const endX = e.changedTouches[0].clientX;
+      if (startX > endX + 30) rotate("right");
+      else if (startX < endX - 30) rotate("left");
+    },
+    { passive: true }
+  );
+}
 
-     function scrollToSection(sectionId) {
-      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-    }
-    let toggleButton = document.querySelector('.menu-toggle');
-let navLinks = document.querySelector('.nav-links');
-
-    toggleButton.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+function scrollToSection(sectionId) {
+  let el = document.getElementById(sectionId);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+}
+let toggleButton = document.querySelector(".menu-toggle");
+let navLinks = document.querySelector(".nav-links");
+if (toggleButton && navLinks) {
+  toggleButton.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}

@@ -66,7 +66,7 @@ let cars = {
             "europeon_cars/jaguar-1.png",
             "europeon_cars/jaguar-2.png",
            "europeon_cars/jaguar-3.png",
-           "europeon_cars/jaguar-4.png",
+           "europeon_cars/jaguar-4.png"
         ]
     },
     "Mercedes-Benz_300SL_Gullwing": {
@@ -76,7 +76,7 @@ let cars = {
             "europeon_cars/gullwing-1.png",
             "europeon_cars/gullwing-2.png",
            "europeon_cars/gullwing-3.png",
-           "europeon_cars/gullwing-4.png",
+           "europeon_cars/gullwing-4.png"
         ]
     },
     "Porsche_356": {
@@ -86,7 +86,7 @@ let cars = {
             "europeon_cars/porsche-1.png",
             "europeon_cars/porsche-2.png",
            "europeon_cars/porsche-3.png",
-           "europeon_cars/porsche-4.png",
+           "europeon_cars/porsche-4.png"
         ]
     },
     "Volkswagen_Beetle": {
@@ -96,7 +96,7 @@ let cars = {
             "europeon_cars/beetle-1.png",
             "europeon_cars/beetle-2.png",
            "europeon_cars/beetle-3.png",
-           "europeon_cars/beetle-4.png",
+           "europeon_cars/beetle-4.png"
         ]
     },
     "Ferrari_250_GTO": {
@@ -106,7 +106,7 @@ let cars = {
             "europeon_cars/ferrari-1.png",
             "europeon_cars/ferrari-2.png",
            "europeon_cars/ferrari-3.png",
-           "europeon_cars/ferrari-4.png",
+           "europeon_cars/ferrari-4.png"
         ]
     },
     "Toyota_2000GT": {
@@ -116,7 +116,7 @@ let cars = {
             "japnese_cars/toyota-1.png",
             "japnese_cars/toyota-2.png",
             "japnese_cars/toyota-3.png",
-            "japnese_cars/toyota-4.png",
+            "japnese_cars/toyota-4.png"
         ]
     },
     "Datsun_240Z": {
@@ -126,7 +126,7 @@ let cars = {
             "japnese_cars/datsun-1.png",
             "japnese_cars/datsun-2.png",
             "japnese_cars/datsun-3.png",
-            "japnese_cars/datsun-4.png",
+            "japnese_cars/datsun-4.png"
         ]
     },
     "Mazda_Cosmo": {
@@ -136,7 +136,7 @@ let cars = {
             "japnese_cars/mazda-1.png",
             "japnese_cars/mazda-2.png",
             "japnese_cars/mazda-3.png",
-            "japnese_cars/mazda-4.png",
+            "japnese_cars/mazda-4.png"
         ]
     }
 

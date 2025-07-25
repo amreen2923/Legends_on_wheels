@@ -3,6 +3,7 @@
     text-decoration: none;
     box-sizing: border-box;
 
+
 }
 h2{
     text-align: center;
@@ -81,12 +82,10 @@ display: flex;
 flex-wrap: wrap;
 gap: 10px;
 align-items: center;
-
-
 }
 .gallery img {
-width:20vw;
-height: auto;
+width: calc(25% - 10px);
+max-width: 300px;
 border-radius: 5px;
 box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 margin-left: auto;

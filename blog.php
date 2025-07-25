@@ -24,16 +24,21 @@ if (isset($_GET['delete_id']) && isset($_SESSION['role']) && $_SESSION['role'] =
     <div class="head">
           <button class="menu-toggle">☰ Menu</button>
         <ul class="menu nav-links">
-            <a href="index.html"><li>Home</li></a>
+            <a href="index.php"><li>Home</li></a>
                 <a href="car-directory.html"><li>Directory</li></a>
                 <a href="gallery.php"><li>Gallery</li></a>
                 <a href="blog.php"><li>Blog</li></a>
-            <?php if (isset($_SESSION['email'])): ?>
-                <a href="user_page.php"><li>Dashboard</li></a>
-                <a href="logout.php"><li>Logout</li></a>
-            <?php else: ?>
-                <a href="login.php"><li>Login</li></a>
-            <?php endif; ?>
+         <?php if (isset($_SESSION['email'])): ?>
+        <?php if ($_SESSION['role'] === 'admin'): ?>
+        <a href="admin_page.php"><li>Admin Dashboard</li></a>
+        <?php else: ?>
+        <a href="user_page.php"><li>User Dashboard</li></a>
+        <?php endif; ?>
+        <a href="logout.php"><li>Logout</li></a>
+        <?php else: ?>
+        <a href="login.php"><li>Login</li></a>
+        <?php endif; ?>
+
         </ul>
     </div>
 </div>
@@ -43,27 +48,18 @@ if (isset($_GET['delete_id']) && isset($_SESSION['role']) && $_SESSION['role'] =
 
     <?php
     $result = $conn->query("SELECT * FROM blog_posts ORDER BY created_at DESC");
-    if ($result->num_rows > 0):
+    if ($result && $result->num_rows > 0):
         while ($row = $result->fetch_assoc()):
-
-        $image = "";
-        if (stripos($row['title'], 'mustang') !== false) {
-            $image = "american_cars/mustang-1.png";
-        } elseif (stripos($row['title'], 'beetle') !== false) {
-            $image = "europeon_cars/beetle-2.png";
-        } elseif (stripos($row['title'], 'chevelle') !== false) {
-            $image = "https://upload.wikimedia.org/wikipedia/commons/9/9c/1972_Chevrolet_Chevelle_Malibu_350.jpg";
-        }
+            // Use uploaded image or fallback placeholder
+            $image = !empty($row['image_url']) ? $row['image_url'] : 'images/no-image.png';
     ?>
 
         <div class="card">
-            <?php if ($image): ?>
-                <img src="<?= $image; ?>" alt="Post Image">
-            <?php endif; ?>
+            <img src="<?= htmlspecialchars($image); ?>" alt="Post Image">
             <div class="card-body">
                 <h5><?= htmlspecialchars($row['title']); ?></h5>
-                <h6>By <?= htmlspecialchars($row['author']); ?> on <?= $row['created_at']; ?></h6>
-                <p><?= nl2br(substr($row['content'], 0, 200)); ?>...</p>
+                <h6>By <?= htmlspecialchars($row['author']); ?> on <?= htmlspecialchars($row['created_at']); ?></h6>
+                <p><?= htmlspecialchars(substr($row['content'], 0, 200)); ?>...</p>
                 <a href="view_post.php?id=<?= $row['id']; ?>" class="btn">Read More</a>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                     <a href="blog.php?delete_id=<?= $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
@@ -77,6 +73,7 @@ if (isset($_GET['delete_id']) && isset($_SESSION['role']) && $_SESSION['role'] =
     endif;
     ?>
 </div>
+
 <script src="blog.js"></script>
 </body>
 </html>

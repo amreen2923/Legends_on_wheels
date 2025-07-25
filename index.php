@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +14,15 @@
         <div class="head">
             <button class="menu-toggle">☰ Menu</button>
             <ul class="menu nav-links">
-                <a href="index.html"><li>Home</li></a>
-                <a href="car-directory.html"><li>Directory</li></a>
-                <a href="gallery.php"><li>Gallery</li></a>
-                <a href="blog.php"><li>Blog</li></a>
-                <a href="login.php"><li>Login</li></a>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="car-directory.html">Directory</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                <li><a href="user_page.php">Dashboard</a></li>
+                <?php else: ?>
+                 <li><a href="login.php">Login</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
@@ -107,7 +113,7 @@
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <h2>Share Your Blog</h2>
-       <form action="index.php" method="POST">
+       <form action="index.html" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="story" placeholder="Your Story" rows="5" required></textarea>

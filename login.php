@@ -7,7 +7,7 @@ $errors = [
 ];
 $activeForm = $_SESSION['active_form'] ?? 'login';
 
-session_unset();  // Unset session variables after they've been used
+session_unset(); 
 
 function showError($error)
 {
@@ -18,7 +18,9 @@ function isActiveForm($formName, $activeForm)
 {
     return $formName === $activeForm ? 'active' : '';
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +32,7 @@ function isActiveForm($formName, $activeForm)
 <body>
    
  <div class="home">
-    <a href="index.html"><img src="home/home-icon.png" alt=""></a>
+    <a href="index.php"><img src="home/home-icon.png" alt=""></a>
 </div>
     <div class="container">
           <div class="form-box <?php echo isActiveForm('login', $activeForm);?>" id="login-form">

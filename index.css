@@ -29,13 +29,13 @@
         padding: 2vw;
         align-items: center;
     }
-    .head ul li{
+    .head ul li a{
         font-size: 16px;
         display: flex;
         color: #141E30;
         font-weight: bolder;
     }
-    .head ul li:hover{
+    .head ul li a:hover{
         color: #2C3E50;
     }
     .menu {
@@ -44,6 +44,7 @@
         align-items: center;
         gap: 60px;
     }
+
     .menu-toggle {
     display: none;
     background: #243B55;
@@ -167,6 +168,7 @@
     .features, .explore {
       padding: 20px ;
       text-decoration: none;
+        list-style: none;
       color: #010101;
       list-style: none;
     }
@@ -189,6 +191,8 @@
     background: white;
     margin: 10px 0;
     border-radius: 10px;
+    list-style: none;
+    color: #010101;
 }
     .feature, .explore-card {
       width: 30vw;
