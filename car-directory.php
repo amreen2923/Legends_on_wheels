@@ -7,19 +7,25 @@
    <link rel="stylesheet" href="car-directory.css"> 
 </head>
 <body>
- <div class="header">
-        <img class="logo" src="home/logo.png" alt="logo">
-        <div class="head">
-                <button class="menu-toggle">☰ Menu</button>
-            <ul class="menu nav-links">
-               <a href="index.php"><li>Home</li></a>
+<div class="header">
+    <img class="logo" src="home/logo.png" alt="logo">
+    <div class="head">
+          <button class="menu-toggle">☰ Menu</button>
+        <ul class="menu nav-links">
+            <a href="index.php"><li>Home</li></a>
                 <a href="car-directory.html"><li>Directory</li></a>
                 <a href="gallery.php"><li>Gallery</li></a>
                 <a href="blog.php"><li>Blog</li></a>
-                <a href="login.php"><li>Login</li></a>
-            </ul>
-        </div>
-    </div>
+         <?php if (isset($_SESSION['email'])): ?>
+        <?php if ($_SESSION['role'] === 'admin'): ?>
+        <a href="admin_page.php"><li>Admin Dashboard</li></a>
+        <?php else: ?>
+        <a href="user_page.php"><li>User Dashboard</li></a>
+        <?php endif; ?>
+        <a href="logout.php"><li>Logout</li></a>
+        <?php else: ?>
+        <a href="login.php"><li>Login</li></a>
+        <?php endif; ?>
    <h2>Car Directory</h2>
 <input type="text" id="searchBar" placeholder="Search for a car..." onkeyup="filterCars()">
 
